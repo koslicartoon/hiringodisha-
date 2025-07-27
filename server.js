@@ -11,7 +11,7 @@ app.use(bodyParser.json());
 app.use(cors());
 
 // MongoDB Connection
-const DB_URI = 'mongodb://localhost:27017/jobPortal';
+const DB_URI = process.env.MONGODB_URI;
 mongoose.connect(DB_URI)
     .then(() => console.log('MongoDB connected successfully'))
     .catch((error) => console.error('Error connecting to MongoDB:', error));
